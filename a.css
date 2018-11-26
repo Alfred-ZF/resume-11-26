@@ -268,10 +268,12 @@ main>.selfIntroduction {
   font-size: 18px;
 }
 
-section.skills>h2 {
+section.skills>h2,
+section.portfolio>h2 {
   font-size: 34px;
   text-align: center;
   margin-top: 50px;
+  color: #3D4451;
 }
 
 section.skills>ol {
@@ -347,4 +349,95 @@ section.skills>ol>li:nth-child(5) .progress {
 
 section.skills>ol>li:nth-child(6) .progress {
   width: 40%
+}
+
+section.portfolio{
+  margin: 0 auto;
+  max-width: 940px;
+  margin-bottom: 100px;
+  text-align: center;
+  vertical-align: top;
+  
+}
+
+section.portfolio > nav > ol{
+  /* border: 1px solid red; */
+  display: inline-block;
+}
+section.portfolio > nav > ol > li{
+  float: left;
+  margin-left: 40px;
+  cursor: pointer;
+}
+
+section.portfolio > nav > ol > li:first-child{
+  margin-left: 0px;
+}
+
+section.portfolio > nav {
+  display: inline-block;
+  text-align: center;
+  margin-top: 33px;
+  vertical-align: top;
+  
+}
+
+section.portfolio > nav > .portfolioBar{
+  width: 100%;
+  height: 5px;
+  /* border: 1px solid red; */
+  border-radius: 3px;
+  background: white;
+  
+}
+
+section.portfolio > nav > .portfolioBar .Bar1{
+  width: 30px;
+  background:#E6686A; 
+  height: 5px;
+  border-radius: 3px;
+}
+
+section.portfolio > nav > .portfolioBar .Bar2{
+  width: 50px;
+  background:#E6686A; 
+  height: 5px;
+  border-radius: 3px;
+  margin-left: 65px;
+}
+
+section.portfolio > nav > .portfolioBar .Bar3{
+  width: 95px;
+  background:#E6686A; 
+  height: 5px;
+  border-radius: 3px;
+  margin-left: 143px;
+}
+section.portfolio > nav > .portfolioBar #Bar{
+  transition: all 0.3s linear;
+}
+
+section.portfolio > .portfolioImages{
+  height: 597px;
+  position: relative;
+  /* border: 1px solid red; */
+  margin-top: 26px;
+}
+
+section.portfolio > .portfolioImages > .image1{
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+section.portfolio > .portfolioImages > .image2{
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+section.portfolio > .portfolioImages > .image3{
+  position: absolute;
+  top:312px;
+  right: 0; 
 }

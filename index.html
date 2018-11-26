@@ -168,18 +168,42 @@
       </li>
     </ol>
   </section>
-  <section class="production">
+  <section class="portfolio">
+    <h2>作品集</h2>
     <nav>
-      <ol>
-        <li>所有</li>
-        <li>框架</li>
-        <li>原生JS&amp;CSS</li>
+      <ol class="clearfix">
+        <li id="portfolio1">所有</li>
+        <li id="portfolio2">框架</li>
+        <li id="portfolio3">原生JS&amp;CSS</li>
       </ol>
+      <div class="portfolioBar">
+        <div id="Bar" class="Bar1"></div>
+      </div>
     </nav>
+    <div class="portfolioImages">
+      <div class="image1">
+        <img src="./image/1.jpg" alt="作品1">
+      </div>
+      <div class="image2">
+        <img src="./image/2.jpg" alt="作品2">
+      </div>
+      <div class="image3">
+        <img src="./image/3.jpg" alt="作品3">
+      </div>
+    </div>
   </section>
-  <!-- <iframe src="" frameborder="0" name="##"></iframe><br>
-  <a target="##" href="//www.qq.com">QQ</a>
-  <a target="##" href="//www.baidu.com">baidu</a> -->
+  <script>
+    portfolio1.onclick = function () {
+      Bar.className = 'Bar1';
+    }
+    portfolio2.onclick = function () {
+      Bar.className = 'Bar2';
+    }
+    portfolio3.onclick = function () {
+      Bar.className = 'Bar3';
+    }
+  </script>
+
 </body>
 
 </html>
