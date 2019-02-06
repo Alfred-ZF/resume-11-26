@@ -2,11 +2,52 @@
 <html lang="zh-Hans">
 
 <head>
-
   <title>个人简历</title>
-  <link rel="stylesheet" href="./a.css">
+  <link rel="stylesheet" href="./a.css" />
+  <!-- <link rel="stylesheet" href="./loading.css"> -->
+  <link rel="stylesheet" media="(max-width:250px;)" href="">
   <script src="//at.alicdn.com/t/font_930100_lqdlt4ermos.js"></script>
   <style type="text/css">
+    .loading {
+      width: 200px;
+      height: 200px;
+      position: relative;
+    }
+
+    .loading::before,
+    .loading::after {
+      content: '';
+      width: 0px;
+      height: 0px;
+      background: #111;
+      border-radius: 50%;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      animation: circle 2s linear infinite;
+    }
+
+    .loading:after {
+      animation-delay: 1s;
+    }
+
+    @keyframes circle {
+      0% {
+        width: 0px;
+        height: 0px;
+        opacity: 1;
+      }
+
+      100% {
+        width: 100px;
+        height: 100px;
+        opacity: 0;
+      }
+    }
+
     .icon {
       width: 1em;
       height: 1em;
@@ -14,31 +55,54 @@
       fill: currentColor;
       overflow: hidden;
     }
+
+    .site-welcome,
+    .active {
+      display: flex;
+    }
+
+    .site-welcome {
+      display: none;
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: grey;
+      z-index: 1;
+      justify-content: center;
+      align-items: center;
+    }
   </style>
 </head>
 
 <body>
-  <!--<a href="./index2.html">index</a>
-  
-  <form action="user?zzz=3" method="post">
-    <label>用户名：<input type="text" name="username" id=""></label> 
-    <label>密码：<input type="password" name="password" id=""></label>
-   
-    <label><input type="checkbox" name="fruit" value="orange">橘子</label>
-    <label><input type="checkbox" name="fruit" value="banana">香蕉</label>
-    <label><input type="checkbox" name="fruit" value="apple">苹果</label>
+  <!--
+      <a href="./index2.html">index</a>
 
-    <label><input type="radio" name="danxuan" id="">选项1</label>
-    <label><input type="radio" name="danxuan" id="">选项2</label>
-    <select name="group" multiple>
-        <option value="">1</option>
-        <option value="2">第二组</option>
-        <option value="3" disabled>第三组</option>
-        <option value="4" selected>第四组</option>
-    </select>
-    <textarea style="resize:none; width:20px; height:20px;" name="" id="" cols="30" rows="10"></textarea>
-    <input type="submit" value="button">
-  </form>-->
+      <form action="user?zzz=3" method="post">
+        <label>用户名：<input type="text" name="username" id=""></label>
+        <label>密码：<input type="password" name="password" id=""></label>
+
+        <label><input type="checkbox" name="fruit" value="orange">橘子</label>
+        <label><input type="checkbox" name="fruit" value="banana">香蕉</label>
+        <label><input type="checkbox" name="fruit" value="apple">苹果</label>
+
+        <label><input type="radio" name="danxuan" id="">选项1</label>
+        <label><input type="radio" name="danxuan" id="">选项2</label>
+        <select name="group" multiple>
+            <option value="">1</option>
+            <option value="2">第二组</option>
+            <option value="3" disabled>第三组</option>
+            <option value="4" selected>第四组</option>
+        </select>
+        <textarea style="resize:none; width:20px; height:20px;" name="" id="" cols="30" rows="10"></textarea>
+        <input type="submit" value="button">
+      </form>
+    -->
+  <div id="siteWelcome" class="site-welcome active">
+    <div class="loading"></div>
+  </div>
 
   <div class="topNavBar ">
     <div class="topNavBar-inner clearfix">
@@ -68,20 +132,12 @@
   <main>
     <div class="userCard">
       <div class="pictureAndText clearfix">
-        <div class="picture">
-          <img src="./image/avatar.jpg" alt="头像">
-        </div>
+        <div class="picture"><img src="./image/avatar.jpg" alt="头像" /></div>
         <div class="text">
-
-          <span class="welcome">
-            Hello
-            <span class="triangle">
-
-            </span>
-          </span>
+          <span class="welcome"> Hello <span class="triangle"> </span> </span>
           <h1>张帆</h1>
-          <p> 前端开发工程师</p>
-          <hr>
+          <p>前端开发工程师</p>
+          <hr />
           <dl>
             <dt>年龄</dt>
             <dd>18</dd>
@@ -114,30 +170,28 @@
             <use xlink:href="#icon-github"></use>
           </svg>
         </a>
-
       </footer>
     </div>
     <p class="resume-button">
       <a class="button" href="./优惠券方案.pdf" download>下载 PDF 简历</a>
     </p>
     <p class="selfIntroduction">
-      张帆，前端开发攻城狮<br>
+      张帆，前端开发攻城狮<br />
       技能：前端开发，Rails 开发，Node.js 开发
     </p>
-
   </main>
 
   <section class="skills">
     <h2>技能</h2>
     <ol class="clearfix">
       <li>
-        <h3>HTML 5 &amp; CSS 3 </h3>
+        <h3>HTML 5 &amp; CSS 3</h3>
         <div class="progressBar">
           <div class="progress"></div>
         </div>
       </li>
       <li>
-        <h3>Javascript </h3>
+        <h3>Javascript</h3>
         <div class="progressBar">
           <div class="progress"></div>
         </div>
@@ -181,29 +235,26 @@
       </div>
     </nav>
     <div class="portfolioImages">
-      <div class="image1">
-        <img src="./image/1.jpg" alt="作品1">
-      </div>
-      <div class="image2">
-        <img src="./image/2.jpg" alt="作品2">
-      </div>
-      <div class="image3">
-        <img src="./image/3.jpg" alt="作品3">
-      </div>
+      <div class="image1"><img src="./image/1.jpg" alt="作品1" /></div>
+      <div class="image2"><img src="./image/2.jpg" alt="作品2" /></div>
+      <div class="image3"><img src="./image/3.jpg" alt="作品3" /></div>
     </div>
   </section>
   <script>
     portfolio1.onclick = function () {
-      Bar.className = 'Bar1';
+      Bar.className = 'Bar1'
     }
+
     portfolio2.onclick = function () {
-      Bar.className = 'Bar2';
+      Bar.className = 'Bar2'
     }
     portfolio3.onclick = function () {
-      Bar.className = 'Bar3';
+      Bar.className = 'Bar3'
     }
   </script>
-
+  <script>
+    siteWelcome.classList.remove('active');
+  </script>
 </body>
 
 </html>
