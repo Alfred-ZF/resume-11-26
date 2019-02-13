@@ -108,16 +108,16 @@
       <a href="#" class="logo">
         <span class="ZF">ZF</span><span class="card">card</span>
       </a>
-      <nav class="menu">
+      <nav class="menu">  
         <ul class="clearfix">
-          <li><a href="">关于</a></li>
-          <li><a href="">技能</a></li>
+          <li><a href="#siteAbout">关于</a></li>
+          <li><a href="#siteSkills">技能</a></li>
           <li class="menuTrigger">
-            <a href="">经验</a>
+            <a href="#sitePortfolio">作品集</a>
             <ul class="menuTag">
-              <li>经验 1</li>
-              <li>经验 2</li>
-              <li>经验 3</li>
+              <li>所有</li>
+              <li>框架</li>
+              <li>原生JS&CSS</li>
             </ul>
           </li>
           <li class="menuTrigger">
@@ -142,7 +142,7 @@
     <div class="mask"></div>
   </div>
 
-  <main>
+  <main id="siteAbout">
     <div class="userCard">
       <div class="pictureAndText clearfix">
         <div class="picture"><img src="./image/avatar.jpg" alt="头像" /></div>
@@ -194,7 +194,7 @@
     </p>
   </main>
 
-  <section class="skills">
+  <section id="siteSkills" class="skills">
     <h2>技能</h2>
     <ol class="clearfix">
       <li>
@@ -235,7 +235,7 @@
       </li>
     </ol>
   </section>
-  <section class="portfolio">
+  <section  id="sitePortfolio" class="portfolio">
     <h2>作品集</h2>
     <nav>
       <ol class="clearfix">
@@ -292,6 +292,34 @@
       }
       
     }
+    let aTags = document.querySelectorAll('nav.menu > ul > li > a')
+    for (let i = 0; i < aTags.length; i++) {
+      aTags[i].onclick = function (x) {
+        x.preventDefault()
+        let href = x.currentTarget.getAttribute('href')
+        let element = document.querySelector(href)
+        let dis = element.offsetTop     
+        window.scrollTo(0, dis - 100);
+        
+      }
+      
+    }
+
+    // let aTags = document.querySelectorAll('nav.menu > ul > li >a')
+    // for (let i = 0; i < aTags.length; i++) {
+    //   aTags[i].onclick = function (x) {
+    //     x.preventDefault()
+    //     let a = x.currentTarget
+    //     let href = a.getAttribute('href')
+    //     let element = document.querySelector(href)
+    //     console.log(element);
+    //     let top = element.offsetTop;
+    //     window.scrollTo(0, top - 100);
+        
+        
+    //   }
+      
+    // }
   </script>
 </body>
 

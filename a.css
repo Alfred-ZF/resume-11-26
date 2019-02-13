@@ -120,6 +120,7 @@ a {
 .topNavBar .menuTrigger.active .menuTag li{
   white-space: nowrap;
   padding: 5px 10px;
+  cursor: pointer;
 }
 
 .topNavBar .menu .active a::after {
