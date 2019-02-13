@@ -27,6 +27,17 @@ hr {
   width: 100%;
   top: 0;
   left: 0;
+  color: #b6b6b6;
+  transition: all 0.25s;
+}
+
+.topNavBar.sticky{
+  background: white;
+  color:#444;
+  padding: 15px;
+  transition: all 0.5s;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.75);
+  z-index: 1;
 }
 
 .topNavBar-inner {
@@ -64,7 +75,7 @@ hr {
 
 a {
   text-decoration: none;
-  color: #b6b6b6;
+  color: inherit;
   font-weight: bold;
 }
 
@@ -77,10 +88,60 @@ a {
   padding-bottom: 8px;
   border-bottom: 3px solid transparent;
   border-top: 3px solid transparent;
+  position: relative;
 }
 
-.topNavBar nav>ul>li:hover {
-  border-bottom: 3px solid #df6567;
+.topNavBar .menuTrigger .menuTag{
+  display:none;
+}
+
+.topNavBar .menuTrigger.active .menuTag{
+  display:block;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  background: white;
+  color: #3d4451;
+  animation: menuTagSlide 0.5s;
+  box-shadow: 0 0 
+}
+
+@keyframes menuTagSlide{
+  0%{
+    margin-right:100%;
+    opacity: 0;
+  }
+  100%{
+    margin-right: 0;
+    opacity: 1;
+  }
+}
+
+.topNavBar .menuTrigger.active .menuTag li{
+  white-space: nowrap;
+  padding: 5px 10px;
+}
+
+.topNavBar .menu .active a::after {
+  /* border-bottom: 3px solid #df6567; */
+  content:'';
+  display: block;
+  position: absolute;
+  left:0;
+  top:90%;
+  width: 100%;
+  height:3px;
+  background:#df6567;
+  animation: sideTrans 0.5s;
+}
+
+@keyframes sideTrans{
+  0%{
+    width:0;
+  }
+  100%{
+    width:100%;
+  }
 }
 
 .clearfix::after {

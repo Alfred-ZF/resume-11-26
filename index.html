@@ -103,17 +103,31 @@
     <div class="loading"></div>
   </div>
 
-  <div class="topNavBar ">
+  <div id="topNavBar" class="topNavBar ">
     <div class="topNavBar-inner clearfix">
       <a href="#" class="logo">
         <span class="ZF">ZF</span><span class="card">card</span>
       </a>
-      <nav>
+      <nav class="menu">
         <ul class="clearfix">
           <li><a href="">关于</a></li>
           <li><a href="">技能</a></li>
-          <li><a href="">经验</a></li>
-          <li><a href="">练习</a></li>
+          <li class="menuTrigger">
+            <a href="">经验</a>
+            <ul class="menuTag">
+              <li>经验 1</li>
+              <li>经验 2</li>
+              <li>经验 3</li>
+            </ul>
+          </li>
+          <li class="menuTrigger">
+            <a href="">练习</a>
+            <ul class="menuTag">
+              <li>练习 1</li>
+              <li>练习 2</li>
+              <li>练习 3</li>
+            </ul>
+          </li>
           <li><a href="">博客</a></li>
           <li><a href="">日历</a></li>
           <li><a href="">联系</a></li>
@@ -255,6 +269,29 @@
     setTimeout(() => {
       siteWelcome.classList.remove('active');
     }, 1500);
+
+    window.onscroll = function () {
+      if (window.scrollY > 5) {
+        topNavBar.classList.add('sticky');
+      }else{
+        topNavBar.classList.remove('sticky');
+      }
+       
+    }
+
+    let liTags = document.querySelectorAll('nav.menu > ul > li')
+    console.log(liTags)
+    for (let i = 0; i < liTags.length; i++) {
+      liTags[i].onmouseenter = function (x) {
+      
+        let li = x.currentTarget.classList.add('active')
+        
+      }
+      liTags[i].onmouseleave = function (x) {
+        let li = x.currentTarget.classList.remove('active')
+      }
+      
+    }
   </script>
 </body>
 
