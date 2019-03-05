@@ -320,7 +320,7 @@ main>.selfIntroduction {
 }
 
 
-section.skills>h2,
+section.skills>h2,section.message>h2,
 section.portfolio>h2 {
   font-size: 34px;
   text-align: center;
@@ -497,16 +497,16 @@ section.portfolio > .portfolioImages > .image3{
 } */
 
 section.portfolio > h2{
-  margin: 36px 0;
+  margin: 60px 0 30px 0;
 }
 
-section.portfolio > .swiper-container {
+section.portfolio > #slides > .swiper-container {
   width: 800px;
   height: 600px;
   border: 1px solid #ddd;
 }
 
-section.portfolio > .swiper-button-prev, section.portfolio > .swiper-button-next{
+section.portfolio > #slides > .swiper-button-prev, section.portfolio > #slides > .swiper-button-next{
   background-color:white;
   height:60px;
   width:60px;
@@ -517,7 +517,21 @@ section.portfolio > .swiper-button-prev, section.portfolio > .swiper-button-next
   border-radius: 50%;
 }
 
-section.portfolio > .swiper-button-next{
+section.portfolio > #slides > .swiper-button-next{
   left: 100%;
   right:auto;
+}
+
+section.message > ol{
+  max-width: 700px;
+  margin: 20px auto;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  background-color: #fff;
+
+}
+
+section.message > ol > li{
+  padding: 16px;
+  border-bottom: 1px solid #ddd;
 }
