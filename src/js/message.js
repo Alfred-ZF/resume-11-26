@@ -1,3 +1,4 @@
+alert(3)
 ! function () {
   //view层
   var view = View('section.message')

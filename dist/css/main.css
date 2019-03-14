@@ -133,7 +133,7 @@ a {
 
 .banner {
   height: 643px;
-  background-image: url(./image/rs-cover.jpg);
+  background-image: url(../image/rs-cover.jpg);
   background-position: center center;
   background-size: cover; }
 
